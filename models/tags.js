@@ -1,37 +1,27 @@
 module.exports = function (sequelize, DataTypes) {
-    const Tags = sequelize.define("Tags", {
-        tag1: {
+    const tags = sequelize.define("tags", {
+        tagName: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
-            }
         },
-        tag2: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
+        urlId:{
+            type: DataTypes.INTEGER,
+
+            /*
+            references:{
+                model: 'video', 
+                key: 'id'  
             }
+            */
         },
-        tag3: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
+        startTime: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+
         },
-        tag4: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
-        },
-        tag5: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
-        },
-       
+        endTime: {
+            type: DataTypes.INTEGER,
+        }
     });
-    return Tags;
+    return tags;
 };
