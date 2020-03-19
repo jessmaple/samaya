@@ -1,16 +1,13 @@
 $(document).ready(function() {
   $("body").css('background-color', 'red');
 
-
   $("#tag-form").on("submit",function (event) {
   	event.preventDefault(); 
-
   	let tagObj = {
   		tagName : $('#tagname').val().trim(),
   		startTime: $('#starttime').val().trim(),
   		endTime: $('#endtime').val().trim()
   	}
-
   	let a =  tagObj.tagName; 
   	let b =  tagObj.startTime; 
   	let c =  tagObj.endTime; 
@@ -20,9 +17,9 @@ $(document).ready(function() {
   		(c !== undefined && c !== "" && c.length !== 0 && c !== null) &&
   		(b < c)
   	){
-  		$.ajax("/api/tags",{
-  			type: "POST",
-  			data: tagObj
+  	$.ajax("/api/tags",{
+  		type: "POST",
+  		data: tagObj
   		}).then(function(event){
   			location.reload();
   		})
@@ -30,4 +27,16 @@ $(document).ready(function() {
   		alert("Invalid Parameters")
   	}
   })
+
+  $(".tagButton").on("click",function(event){
+    let tagName = this.id;
+    $.ajax("/", {
+      type: "PUT",
+      data: {id: tagName}
+    }).then(function(event){
+        location.reload();
+    })
+  })
+
+
 });

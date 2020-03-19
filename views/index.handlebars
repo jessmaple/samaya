@@ -1,7 +1,13 @@
 <div class="container">
+	
 
-
-	<button type="button" class="btn btn-success">Delete</button>
+	<iframe width="560" height="315" 
+		src="https://www.youtube.com/embed/WTeqUejf3D0{{param}}" frameborder="0" 
+		allow="accelerometer; encrypted-media; 
+		gyroscope; 
+		picture-in-picture" 
+		allowfullscreen>
+	</iframe>
 
 
 	<form id="tag-form">
@@ -20,6 +26,18 @@
 	</form>
 
 
+	<div class = "col-md-3 offset-md-3"> 
+		{{#each tag}}
+		<button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
+		{{/each}}	
+	</div>
+
+
+	<p>{{startTime}}</p>
+	<p>{{endTime}}</p>
+
+
+	
 </div>
 
 

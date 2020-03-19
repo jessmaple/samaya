@@ -2,14 +2,10 @@ const db = require("../models")
 
 module.exports = function (app) { 
 
-    app.get("/api/tags", (req, res) => {
-        db.tags.findAll({}).then(function(tags){
-            res.json(tags)
-        })
-    })
+
 
     app.post("/api/tags",(req, res) => {
-        console.log(req.body.tagName)
+    
         db.tags.findOne(
         {   
             where: {
@@ -39,10 +35,4 @@ module.exports = function (app) {
             }
         })
     })
-
-
-
-
-
-
 }
