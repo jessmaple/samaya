@@ -3,7 +3,7 @@ body {
     background-color: blue;
 }
 
-/* 
+
  body {
     color: #526066;
 }
@@ -33,6 +33,7 @@ p {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     opacity: ;
+    color: black;
  }
 
 
@@ -99,4 +100,4 @@ p {
     .banner-head {
         font-size: 3em;
     }
-} */
+} 
