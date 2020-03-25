@@ -173,6 +173,10 @@ h6 {
     border-bottom: 1px solid #e7e7e7;
 }
 
+.card {
+    display: block;
+}
+
 
 /*
  * -- PRICING TABLE BUTTON --
@@ -235,7 +239,7 @@ h6 {
 }
 
 
-/* TEST AREA */
+/* VIDEO BACKGROUND */
 .fullscreen-bg {
     position: fixed;
     top: 0;
@@ -254,3 +258,51 @@ h6 {
     height: 100%;
 }
 
+/* RESULTS PAGE */
+#logo {
+    margin: 15px;
+    height: 25px;
+    width: auto;
+    position: absolute;
+    z-index: 1;
+}
+.jumbotron {
+    background-color: #333;
+}
+ #main-video {
+height: 600px;
+width: auto;
+ }
+
+ .video-title {
+     color: lightskyblue;
+ }
+ .lead {
+     color: lightgray;
+ }
+
+.video-results {
+    width: 15%;
+    height: auto;
+    border-radius: 2em;
+}
+
+.badge {
+    width: 30%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+#results-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#video {
+    border-radius: 5px;
+    box-shadow: 1px 3px rgba(65, 62, 62, 0.222);
+}
