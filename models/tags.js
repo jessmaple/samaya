@@ -7,12 +7,12 @@ module.exports = function (sequelize, DataTypes) {
         urlId:{
             type: DataTypes.INTEGER,
 
-            /*
+          
             references:{
-                model: 'video', 
+                model: 'videos', 
                 key: 'id'  
             }
-            */
+       
         },
         startTime: {
             type: DataTypes.INTEGER,
@@ -23,5 +23,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
         }
     });
+
+    tags.associate = function(models) {
+        tags.belongsTo(models.videos, {
+          foreignKey: {
+            allowNull: false
+          }
+        })};
+
+  
     return tags;
 };

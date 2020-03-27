@@ -17,7 +17,7 @@ module.exports = function(app) {
   	var st = 0
   	var et = 0
 
-	app.get("/", (req,res) => {
+	app.get("/results", (req,res) => {
 		db.tags.findAll({}).then(function(obj){
 			let objArr = []
 			let startEnd = ''
@@ -27,25 +27,31 @@ module.exports = function(app) {
 			obj.forEach((ele)=>{
 				objArr.push(ele.dataValues)
 			})
-			res.render("index",{ 
+			res.render("results",{ 
 				tag: objArr,
 			 	param: startEnd, 
 			});   
 		})
 	})
 
-    app.put("/", (req, res) => {
-        db.tags.findOne(
-        {   
-            where: {
-                tagName: req.body.id
-            }
-        }).then(function(obj){   	 
-            if(obj !== null){
-            	st = obj.dataValues.startTime
-            	et = obj.dataValues.endTime
-              	res.render("index",{});   
-            }
-        })
+  app.get("/",(req, res) => {
+    res.render("index",{}); 
+  })
+
+
+
+  app.put("/results", (req, res) => {
+    db.tags.findOne(
+    {   
+        where: {
+            tagName: req.body.id
+        }
+    }).then(function(obj){   	 
+        if(obj !== null){
+        	st = obj.dataValues.startTime
+        	et = obj.dataValues.endTime
+          	res.render("results",{});   
+        }
     })
+  })
 };
