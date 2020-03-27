@@ -7,12 +7,12 @@ module.exports = function (sequelize, DataTypes) {
         urlId:{
             type: DataTypes.INTEGER,
 
-            /*
+          
             references:{
-                model: 'video', 
+                model: 'videos', 
                 key: 'id'  
             }
-            */
+       
         },
         startTime: {
             type: DataTypes.INTEGER,

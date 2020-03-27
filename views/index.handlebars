@@ -1,44 +1,46 @@
-<div class="container">
-	
+<div class="banner">
+  <div class="header">
+    Samaya
+  </div>
 
-	<iframe width="560" height="315" 
-		src="https://www.youtube.com/embed/WTeqUejf3D0{{param}}" frameborder="0" 
-		allow="accelerometer; encrypted-media; 
-		gyroscope; 
-		picture-in-picture" 
-		allowfullscreen>
-	</iframe>
+  <div class="banner-head">
+    <div class="fullscreen-bg">
+      <video loop muted autoplay poster="/assets/images/footsteps.png" class="fullscreen-bg__video">
+        <source src="/assets/images/shoes_walking_feet_legs_1080p.mp4" type="video/mp4">
+      </video>
+    </div>
 
+    <div class="banner-subhead">
+      <h1  id="power">Powerful<br />
+        Video Analysis <br /></h1> 
+      <h6>Identify objects and scenes specific to your business needs.</h6>
 
-	<form id="tag-form">
-		<div class="form-group">
-			<label for="title">Tag Name</label>
-			<input placeholder="" type="text" class="form-control" id="tagname">
-			<br />
-			<label for="title">Start Time</label>
-			<input placeholder="" type="text" class="form-control" id="starttime">
-			<br />
-			<label for="title">End Time</label>
-			<input placeholder="" type="text" class="form-control" id="endtime">
-			<br />
-			<button type="ADD" class="btn btn-success submit">Submit</button>
-		</div>
-	</form>
+      <form id="video-form">
+          <div class="form-inline">
+              <input style="width: 50rem" placeholder="https://www.youtube.com/watch?v=TfBaVaubcyw" type="text" class="form-control" id="urlLink">
+              <button type="submit" class="btn btn-success submit">submit</button>
+          </div>
+      </form>
+    </div>
 
+    <div class="tagBox row"> 
+      <div class = "col-md-1"> 
+        <button type="button" class="linkButton btn btn-primary "  style="width: 5rem" id={{tagName}}>test</button>
+      </div>
+      <div class = "col-md-1"> 
+        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
+      </div>
+      <div class = "col-md-1"> 
+        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
+      </div>
+      <div class = "col-md-1"> 
+        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
+      </div>
+    </div>
+  </div>
 
-	<div class = "col-md-3 offset-md-3"> 
-		{{#each tag}}
-		<button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
-		{{/each}}	
-	</div>
-
-
-	<p>{{startTime}}</p>
-	<p>{{endTime}}</p>
-
-
-	
 </div>
-
+</div>
+</div>
 
 

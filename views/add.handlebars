@@ -1,0 +1,41 @@
+
+    <img id="logo" src="/assets/images/samaya_logo.png" alt="samaya_logo">
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/WTeqUejf3D0{{param}}" frameborder="0" 
+                allow="accelerometer; encrypted-media; 
+                gyroscope; 
+                picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+            <form id="tag-form">
+                <div class="form-group">
+                    <label for="title">Tag Name</label>
+                    <input placeholder="" type="text" class="form-control" id="tagname">
+                    <br />
+                    <label for="title">Start Time</label>
+                    <input placeholder="" type="text" class="form-control" id="starttime">
+                    <br />
+                    <label for="title">End Time</label>
+                    <input placeholder="" type="text" class="form-control" id="endtime">
+                    <br />
+                    <button type="ADD" class="btn btn-success submit">Submit</button>
+                </div>
+            </form>
+            <div class = "col-md-3 offset-md-3"> 
+                {{#each tag}}
+                <button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
+                {{/each}}   
+            </div>
+            <p>{{startTime}}</p>
+            <p>{{endTime}}</p>
+        </div>
+    </div>
+
+
+
+
+
+    
