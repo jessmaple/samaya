@@ -13,4 +13,8 @@ module.exports = function (app) {
             res.json(allTags)
         })
     })
+
+    app.get("/", (req, res) => {
+        res.render("index")
+    })
 }
