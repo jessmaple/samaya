@@ -24,18 +24,12 @@
     </div>
 
     <div class="tagBox row"> 
-      <div class = "col-md-1"> 
-        <button type="button" class="linkButton btn btn-primary "  style="width: 5rem" id={{tagName}}>test</button>
-      </div>
-      <div class = "col-md-1"> 
-        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
-      </div>
-      <div class = "col-md-1"> 
-        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
-      </div>
-      <div class = "col-md-1"> 
-        <button type="button" class="linkButton btn btn-primary" style="width: 5rem" id={{tagName}}>test</button>
-      </div>
+
+      {{#each tag}}
+        <div class = "col-md-1"> 
+          <button type="button" class="linkButton btn btn-primary "  style="width: 5rem" id={{tagName}}>{{tagName}}</button>
+        </div>
+      {{/each}} 
     </div>
   </div>
 

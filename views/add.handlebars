@@ -3,7 +3,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <iframe id ="urlPath" urlId = {{urlId}} width="560" height="315" 
-                src="{{url}}{{param}}" frameborder="0" 
+                src="{{url}}" frameborder="0" 
                 allow="accelerometer; encrypted-media; 
                 gyroscope; 
                 picture-in-picture" 
@@ -25,7 +25,7 @@
             </form>
             <div class = "col-md-3 offset-md-3"> 
                 {{#each tag}}
-                <button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
+                <button startTime = "{{startTime}}" endTime = "{{endTime}}" type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
                 {{/each}}   
             </div>
             <p>{{startTime}}</p>

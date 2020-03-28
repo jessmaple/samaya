@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 const db = require("../models");
+var Sequelize = require("sequelize");
 
 
 // Routes
@@ -13,29 +14,25 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // Sets up the Express app to handle data parsing
- 
-  	var st = 0
-  	var et = 0
-
-	app.get("/results", (req,res) => {
-		db.tags.findAll({}).then(function(obj){
-			let objArr = []
-			let startEnd = ''
-			if(et !== 0){
-				startEnd = `?autoplay=1&mute=1&start=${st}&end=${et}`
-			}
-			obj.forEach((ele)=>{
-				objArr.push(ele.dataValues)
-			})
-			res.render("results",{ 
-				tag: objArr,
-			 	param: startEnd, 
-			});   
-		})
-	})
 
   app.get("/",(req, res) => {
-    res.render("index",{}); 
+    db.tags.findAll({
+   
+    }).then(function(obj){
+      let objArr = []
+      let tagArr = []
+
+      obj.forEach((ele)=>{
+        if(!tagArr.includes(ele.dataValues.tagName)){
+          tagArr.push(ele.dataValues.tagName)
+          objArr.push({tagName: ele.dataValues.tagName})
+
+        }
+        
+      })
+
+      res.render("index",{tag: objArr});   
+    })
   })
 
   app.get("/add/:id", function(req, res,next ) {
@@ -54,24 +51,61 @@ module.exports = function(app) {
           where: {urlId:urlId }
       }).then((tag)=>{
         console.log(tag)
-        var embedUrl = "https://www.youtube.com/embed/"
-        embedUrl = embedUrl + path[1];    
-        res.render("add",{url: embedUrl, urlId: urlId})})
+
+      let objArr = []
+      tag.forEach((ele)=>{
+        objArr.push(ele.dataValues)
+      })
+
+      var embedUrl = "https://www.youtube.com/embed/"
+      embedUrl = embedUrl + path[1];    
+      res.render("add",{url: embedUrl, urlId: urlId,tag: objArr})})
     })
   })
 
-  app.put("/results", (req, res) => {
-    db.tags.findOne(
-    {   
-        where: {
-            tagName: req.body.id
+
+  app.get("/results/:tagName", (req, res) => {
+    db.tags.findAll({   
+      where: {
+        tagName : req.params.tagName
+      }
+    }).then(function(data){
+      
+      var nameList = []
+      data.forEach((ele)=>{
+        if(!nameList.includes(ele.dataValues.urlId)){
+          nameList.push(ele.dataValues.urlId)
         }
-    }).then(function(obj){   	 
-        if(obj !== null){
-        	st = obj.dataValues.startTime
-        	et = obj.dataValues.endTime
-          	res.render("results",{});   
+      })
+
+      db.videos.findAll({
+        where:{
+          id: nameList
         }
+      }).then(function(data){
+        var urlList = []
+     
+        data.forEach((ele)=>{
+          var url = ele.dataValues.url;
+          var vid = ele.dataValues.id; 
+
+          if(!urlList.includes(url)){
+            let refId = url.split("=")
+            urlList.push({
+              thumb:`https://img.youtube.com/vi/${refId[1]}/0.jpg`,
+              id: `/add/${vid}`
+            })
+          }
+        })
+        console.log(urlList)
+        res.render("results",{urls: urlList});   
+      })
     })
   })
+
+ 
+
+
+
+
 };

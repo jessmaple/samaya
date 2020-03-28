@@ -11,6 +11,7 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true
         }
     });
+
  
     return videos;
 };
