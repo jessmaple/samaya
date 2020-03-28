@@ -5,7 +5,8 @@ $(document).ready(function() {
   	let tagObj = {
   		tagName : $('#tagname').val().trim(),
   		startTime: $('#starttime').val().trim(),
-  		endTime: $('#endtime').val().trim()
+  		endTime: $('#endtime').val().trim(),
+      urlId: $('#urlPath').attr('urlId')
   	}
   	let a =  tagObj.tagName; 
   	let b =  tagObj.startTime; 
@@ -19,9 +20,10 @@ $(document).ready(function() {
   	$.ajax("/api/tags",{
   		type: "POST",
   		data: tagObj
+
   		})
   	}else{
-  		alert("Invalid Parameters")
+  		alert("Invalid Parameters" + a + b + c)
   	}
   })
 
@@ -37,7 +39,6 @@ $(document).ready(function() {
             type: "POST",
             data: {url}
           }).done(function(data){
-            console.log(data.id)
             window.open("/add/" + data.id,"_self")
           }
         )

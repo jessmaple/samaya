@@ -11,12 +11,6 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true
         }
     });
-
  
-    videos.associate = function(models) {
-        videos.hasMany(models.tags, {
-            
-        })};
-
     return videos;
 };

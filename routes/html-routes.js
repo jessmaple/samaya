@@ -39,18 +39,24 @@ module.exports = function(app) {
   })
 
   app.get("/add/:id", function(req, res,next ) {
+    let urlId = req.params.id; 
+    let path; 
+
     db.videos.findOne(
     {   
       where: {
-        id: req.params.id
+        id: urlId
       }
     }).then(function(obj){
-      var embedUrl = "https://www.youtube.com/embed/"
-      //If the tag doesn't exist in the table create one. 
-      let path = obj.dataValues.url.split("=")
-
-      embedUrl = embedUrl + path[1]; 
-      res.render("add",{url: embedUrl})
+    
+      path = obj.dataValues.url.split("=")
+      db.tags.findAll({
+          where: {urlId:urlId }
+      }).then((tag)=>{
+        console.log(tag)
+        var embedUrl = "https://www.youtube.com/embed/"
+        embedUrl = embedUrl + path[1];    
+        res.render("add",{url: embedUrl, urlId: urlId})})
     })
   })
 
