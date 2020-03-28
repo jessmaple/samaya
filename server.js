@@ -1,4 +1,5 @@
 const express = require("express");
+
 const exphbs = require("express-handlebars");
 
 
@@ -18,10 +19,12 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 // Static directory
 app.use('/', express.static(__dirname + '/public'));
 app.use('/add', express.static(__dirname + '/public'));
 app.use('/results', express.static(__dirname + '/public'));
+
 
 // Routes
 // =============================================================
