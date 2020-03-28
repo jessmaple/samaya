@@ -3,15 +3,20 @@ module.exports = function (sequelize, DataTypes) {
         url: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         id:{
             type: DataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true
         }
     });
 
  
-    videos.hasMany(tags, {foreignKey: 'id'})
+    videos.associate = function(models) {
+        videos.hasMany(models.tags, {
+            
+        })};
 
     return videos;
 };

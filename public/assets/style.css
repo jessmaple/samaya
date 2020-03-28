@@ -1,11 +1,11 @@
 
 body {
-    background-color: blue;
+    background-color: black;
 }
 
 
  body {
-    color: blue
+    color: white;
 }
 
 h2, h3 {
@@ -22,35 +22,43 @@ h6 {
     font-weight: 300;
 }
 
+.addedVideo {
+    margin: 2% 0%;
+}
 
 .l-content {
     margin: 0 auto;
 }
 
-.l-box {
-   
-  
+.btn-primary, .btn-primary:active, .btn-primary:visited, .btn {
+    background-color:#ffffb3 !important;
+    color:black !important;
+    border: none;
+}
+.btn-primary:hover, .btn:hover {
+    background-color: white !important;
 }
 
 .bottom-footer{
-  /* position: fixed;
+  position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
-  text-align: center;  */
+  text-align: center; 
 }
 
 
 /* header  */
-
 .header {
-    position: relative;
-    bottom: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    color: #fff;
-    font-size:  25px; 
-    padding-top: 0;
+  
+    border-bottom: 2px white solid;
+   
+ }
+
+.addHeader {
+    margin-bottom: 3%;
+    border-bottom: 2px white solid;
+   
  }
 
 
@@ -72,7 +80,8 @@ h6 {
     font-size: 196px;
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-weight: 700;        
+    font-weight: 700;      
+    z-index: -100;
 }
 
 .banner-subhead{
@@ -86,111 +95,16 @@ h6 {
 
 .tagBox{
     position: relative;
-    top: 200px;
+    top: 100px;
 }
 
 
 #power{
-  font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size:  25px; 
 
-}
-/*
- * -- PRICING TABLE WRAPPER --
- * This element wraps up all the pricing table elements
- */
- .pricing-tables,
- .information {
-    max-width: 980px;
-    margin: 0 auto;
- }
-.pricing-tables {
-    margin-bottom: 3.125em;
-    text-align: center;
-}
-
-/*
- * -- PRICING TABLE  --
- * Every pricing table has the .pricing-table class
- */
-.pricing-table {
-    border: 1px solid #ddd;
-    margin: 0 0.5em 2em;
-    padding: 0 0 3em;
-}
-
-/*
- * -- PRICING TABLE HEADER COLORS --
- * Choose a different color based on the type of pricing table.
- */
-.pricing-table-free .pricing-table-header {
-    background: #519251;
-}
-
-
-
-
-
-/*
- * -- PRICING TABLE PRICE --
- * Styles for the price and the corresponding <span>per month</span>
- */
-.pricing-table-price {
-    font-size: 6em;
-    margin: 0.2em 0 0;
-    font-weight: 100;
-}
-    .pricing-table-price span {
-        display: block;
-        text-transform: uppercase;
-        font-size: 0.2em;
-        padding-bottom: 2em;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.5);
-        *color: #fff;
-    }
-
-
-
-/*
- * -- PRICING TABLE LIST --
- * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
- */
-.pricing-table-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-
-/*
- * -- PRICING TABLE LIST ELEMENTS --
- * Styles for the individual list elements within each pricing table
- */
-.pricing-table-list li {
-    padding: 0.8em 0;
-    background: #f7f7f7;
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.card {
-    display: block;
-}
-
-
-/*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
- * This inherits from Pure Button.
- */
-.button-choose {
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    border-radius: 2em;
-    font-weight: bold;
-    position: relative;
-    bottom: -1.5em;
 }
 
 .information-head {
@@ -202,10 +116,17 @@ h6 {
     background: #111;
     color: #888;
     text-align: center;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  text-align: center; 
+  
 }
-    .footer a {
-        color: #ddd;
-    }
+
+.footer a {
+     color: #ddd;
+}
 
 
 
@@ -295,4 +216,8 @@ width: auto;
 #video {
     border-radius: 5px;
     box-shadow: 1px 3px rgba(65, 62, 62, 0.222);
+}
+
+.submit {
+    margin-left: 5px;
 }

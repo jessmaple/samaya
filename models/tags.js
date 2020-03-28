@@ -6,11 +6,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         urlId:{
             type: DataTypes.INTEGER,
-            references:{
-                model: 'videos', 
-                key: 'id'  
-            }
-       
         },
         startTime: {
             type: DataTypes.INTEGER,
@@ -24,11 +19,8 @@ module.exports = function (sequelize, DataTypes) {
 
     tags.associate = function(models) {
         tags.belongsTo(models.videos, {
-          foreignKey: {
-            allowNull: false
-          }
+          foreignKey: 'id',
         })};
 
-    tags.belongsTo(videos, {foreignKey: 'id'})
-    return tags;
+        return tags;
 };

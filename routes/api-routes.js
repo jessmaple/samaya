@@ -3,6 +3,13 @@ const db = require("../models")
 module.exports = function (app) { 
 
 
+    app.post("/api/add",(req, res) => {
+          db.videos.create({
+              url: req.body.url
+          }).then(function(data){
+             res.json(data)
+          })
+      })
 
     app.post("/api/tags",(req, res) => {
     
@@ -18,7 +25,7 @@ module.exports = function (app) {
                     tagName: req.body.tagName, 
                     urlId: 1,
                     startTime: req.body.startTime, 
-                    endTime: req.body.endTime
+                    endTime: req.body.endTime,
                 }).then(function(data){
                     res.json(data)
                 })
@@ -35,4 +42,6 @@ module.exports = function (app) {
             }
         })
     })
+
+    
 }
