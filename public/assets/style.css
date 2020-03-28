@@ -1,3 +1,42 @@
+header{
+  height: 100px;
+  background: #262626;
+  width: 100%;
+  z-index: 20;
+  position: fixed;
+  top: 0px;
+}
+
+.logo{
+  width: 30%;
+  float: left;
+  line-height: 100px;
+}
+
+.logo a{
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'poppins', sans-serif;
+  color: white;
+  letter-spacing: 5px;
+  
+}
+
+nav{
+  float: right;
+  line-height: 100px;
+}
+
+nav a{
+  text-decoration: none;
+  font-family: 'poppins', sans-serif;
+  letter-spacing: 4px;
+  font-size: 15px;
+  margin: 0 10px;
+  color: #fff;
+}
+
+
 #hero {
   height:100vh;
   width:100%;
@@ -6,6 +45,7 @@
   align-items:center;
   justify-content: center;
 }
+
 
 
 
@@ -58,7 +98,7 @@ color:#ffffff;
 
 text-transform: uppercase;
 font-size:2em;
-font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
 margin-bottom:0.5rem;
 }
 
@@ -69,6 +109,54 @@ margin:0;
 font-family: 'PT Sans', sans-serif;
 }
 
+.search-box{
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #55DAFD;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+  z-index: 20;
+}
+
+.search-btn{
+  color: #55DAFD;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.search-box:hover > .search-txt{
+  width: 240px; 
+  padding: 0 6px;
+
+}
+
+.search-box:hover > .search-btn{
+  background: #55DAFD;
+}
+
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+  z-index: 20;
+}
 
 
 
