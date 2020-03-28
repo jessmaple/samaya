@@ -42,13 +42,6 @@ h6 {
   top: 20px;
  }
 
-/*
- * -- BANNER --
- * The top banner with the headings. By using a combination
- * of `display: table;` and `display: table-cell;`, we can
- * vertically center the text.
- */
-
 .banner {
     /* background: transparent url('images/footsteps.png') 0 0 no-repeat fixed; */
     text-align: center;
@@ -89,6 +82,22 @@ h6 {
   font-size: 20px;
 }
 
+.main{
+ position: absolute;
+ top: 150%;
+ right: 55%;
+ transform: translate(-50%, -50 );
+
+}
+
+input{
+  border: 3px solid #55DAFD;
+  height: 40px;
+  width: 300px;
+  border-radius: 50px;
+  padding: 0px 10px ;
+
+}
 
 /*
  * -- TABLET MEDIA QUERIES --
