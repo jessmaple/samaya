@@ -24,13 +24,16 @@
       </form>
     </div>
 
-    <div class="tagBox row"> 
-
-      {{#each tag}}
-        <div class = "col-md-1"> 
-          <button type="button" class="linkButton btn btn-primary "  style="width: 5rem" id={{tagName}}>{{tagName}}</button>
+    <div class="container">
+      <div class="row tagHeader"><h4>Browse Created Tags:</h4> </div>
+      <div class="tagBox row">
+        {{#each tag}}
+        <div class="col-md-1">
+          <button type="button" class="linkButton btn btn-primary " style="width: 5rem"
+            id={{tagName}}>{{tagName}}</button>
         </div>
-      {{/each}} 
+        {{/each}}
+      </div>
     </div>
   </div>
 

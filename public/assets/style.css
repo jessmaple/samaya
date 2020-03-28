@@ -22,6 +22,8 @@ h6 {
     font-weight: 300;
 }
 
+
+
 .addedVideo {
     margin: 2% 0%;
 }
@@ -50,7 +52,7 @@ h6 {
 
 /* header  */
 .header {
-  
+    margin-left: 10px;
     border-bottom: 2px white solid;
    
  }
@@ -93,11 +95,17 @@ h6 {
      font-family:'Poppins', sans-serif;
 }
 
-.tagBox{
+.tagBox, .tagHeader{
     position: relative;
-    top: 100px;
+    top: 115px;
 }
 
+.card-img-top {
+    padding: 5px;
+    border: 2px solid white;
+    background: black;
+    background-clip: padding-box;
+}
 
 #power{
     font-family: 'Poppins', sans-serif;
@@ -128,7 +136,11 @@ h6 {
      color: #ddd;
 }
 
-
+.resultHeader{
+    padding-left: 10%;
+    padding-top: 10px;
+    width:100%;
+}
 
 
 @media(min-width: 767px) {

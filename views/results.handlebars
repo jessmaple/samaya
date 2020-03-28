@@ -1,11 +1,15 @@
 
     <div class="jumbotron jumbotron-fluid">
-        <img id="logo" src="/assets/images/samaya_logo.png" alt="samaya_logo">
+        <h2 class="header">
+        Samaya
+      </h2>
+        <h4 class="resultHeader">Video Results Related to "{{tagName}}" :</h4>
     </div>
 
 
     <div class="container" id="results-box">
-
+        <div class="row">
+        </div>
       {{#each urls}}
         <a href={{id}}>
             <div class="card urlLink"  id="url" style="width: 18rem;">

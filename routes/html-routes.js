@@ -98,7 +98,7 @@ module.exports = function(app) {
           }
         })
         console.log(urlList)
-        res.render("results",{urls: urlList});   
+        res.render("results",{urls: urlList, tagName: req.params.tagName});   
       })
     })
   })
