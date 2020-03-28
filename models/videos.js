@@ -6,12 +6,12 @@ module.exports = function (sequelize, DataTypes) {
         },
         id:{
             type: DataTypes.INTEGER,
+            primaryKey: true
         }
     });
 
-    videos.associate = function(models) {
-        videos.hasMany(models.tags, {
-        });
+ 
+    videos.hasMany(tags, {foreignKey: 'id'})
 
     return videos;
 };

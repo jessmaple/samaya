@@ -6,8 +6,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         urlId:{
             type: DataTypes.INTEGER,
-
-          
             references:{
                 model: 'videos', 
                 key: 'id'  
@@ -31,6 +29,6 @@ module.exports = function (sequelize, DataTypes) {
           }
         })};
 
-  
+    tags.belongsTo(videos, {foreignKey: 'id'})
     return tags;
 };
