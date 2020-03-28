@@ -69,10 +69,9 @@ $(document).ready(function() {
   })
   //-------------------- Results Page --------------------------// 
   $(".urlLink").on("click",function (event) {
-
-
-
-
+    var tagName = $(this).attr('id')
+    console.log("test")
+    window.open('/results/' + tagName,"_self");
   })
 
 });
