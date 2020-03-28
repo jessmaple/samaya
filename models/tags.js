@@ -4,15 +4,18 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        tagId:{
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+
         urlId:{
             type: DataTypes.INTEGER,
-
-          
-            references:{
-                model: 'videos', 
-                key: 'id'  
+            references: {
+                model: 'videos',
+                key: 'id'
             }
-       
         },
         startTime: {
             type: DataTypes.INTEGER,
@@ -23,5 +26,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
         }
     });
+
+    tags.associate = function(models){
+        tags.belongsTo(models.videos, {foreignKey: 'urlId'})
+    }   
     return tags;
 };
