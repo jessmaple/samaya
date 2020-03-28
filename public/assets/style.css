@@ -2,11 +2,73 @@
  * -- BASE STYLES --
  * Most of these are inherited from Base, but I want to change a few.
  */
- body {
-    color: #526066;
+
+ *{
+   margin: 0;
+   padding: 0;
+ }
+
+ body{
+    text-align: center;
+ }
+
+ .wrapper{
+  width: 1170px;
+  margin: 0 auto;
 }
 
-h2, h3 {
+header{
+  height: 100px;
+  background: #262626;
+  width: 100%;
+  z-index: 12;
+  position: fixed;
+}
+
+.logo{
+  width: 30%;
+  float: left;
+  line-height: 100px;
+}
+
+.logo a{
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'poppins', sans-serif;
+  color: white;
+  letter-spacing: 5px;
+}
+
+nav{
+  float: right;
+  line-height: 100px;
+}
+
+nav a{
+  text-decoration: none;
+  font-family: 'poppins', sans-serif;
+  letter-spacing: 4px;
+  font-size: 20px;
+  margin: 0 10px;
+  color: #fff;
+}
+
+.banner-area{
+  width: 100;
+  height: 500px;
+  position: fixed;
+  top: 100px;
+  background-image: url();
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.banner-area h1{
+  padding: 8%;
+}
+/* h2, h3 {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 600;
@@ -22,29 +84,23 @@ h6 {
 
 /*
  * -- Layout Styles --
- */
-.l-content {
-    margin: 0 auto;
-}
+ */ 
 
-.l-box {
-   
-  
-}
+
 
 
 
 /* header  */
 
 
- #logo {
+ /* #logo {
   position: relative;
   top: 20px;
- }
+ } */
 
-.banner {
+/* .banner { */
     /* background: transparent url('images/footsteps.png') 0 0 no-repeat fixed; */
-    text-align: center;
+    /* text-align: center;
     background-size: cover;
     height: 200px;
     width: 100%;
@@ -71,8 +127,8 @@ h6 {
      text-align: left;
      color: white;
      font-family:'Poppins', sans-serif;
-}
-
+} */
+/* 
 #power{
   font-size: 50px;
 
@@ -84,7 +140,7 @@ h6 {
 
 .search-box{
   position: absolute;
-  top: 50;
+  top: 60;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #55DAFD;
@@ -93,7 +149,39 @@ h6 {
   padding: 10px;
 }
 
+.search-btn{
+  color: #55DAFD;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.search-box:hover > .search-txt{
+  width: 240px; 
+  padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+  background: white;
+}
+
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+} */
 
 
 
@@ -102,18 +190,15 @@ h6 {
  * On tablets, we want to slightly adjust the size of the banner
  * text and add some vertical space between the various pricing tables
  */
-@media(min-width: 767px) {
+/* @media(min-width: 767px) {
 
     .banner-head {
         font-size: 4em;
     }
-    .pricing-table {
-        margin-bottom: 0;
-    }
 
-}
+} */
 /* VIDEO BACKGROUND */
-.fullscreen-bg {
+/* .fullscreen-bg {
   position: fixed;
   top: 0;
   right: 0;
@@ -126,24 +211,24 @@ h6 {
   position: absolute;
   width: 100%;
   height: 100vh;
-}
+} */
 
 /*
  * -- PHONE MEDIA QUERIES --
  * On phones, we want to reduce the height and font-size of the banner further
  */
-@media (min-width: 480px) {
+/* @media (min-width: 480px) {
     .banner {
         height: 400px;
     }
     .banner-head {
         font-size: 3em;
     }
-}
+} */
 
 
 
-/* RESULTS PAGE */
+/* RESULTS PAGE
 #logo {
     margin: 15px;
     height: 25px;
@@ -190,4 +275,4 @@ width: auto;
 #video {
     border-radius: 5px;
     box-shadow: 1px 3px rgba(65, 62, 62, 0.222);
-}
+} */
