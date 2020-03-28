@@ -3,6 +3,13 @@ const db = require("../models")
 module.exports = function (app) { 
 
 
+    app.post("/api/add",(req, res) => {
+          db.videos.create({
+              url: req.body.url
+          }).then(function(data){
+             res.json(data)
+          })
+      })
 
     app.post("/api/tags",(req, res) => {
     
