@@ -5,35 +5,38 @@
         </h2>
         <div class="addedVideo row">
             <div class="col-3"></div>
-            <iframe class="col-6" id="urlPath" urlId={{urlId}} width="560" height="315" src="{{url}}{{param}}"
-                frameborder="0" allow="accelerometer; encrypted-media; 
+            <iframe class="col-6" id="urlPath" urlId={{urlId}} width="560" height="315" src="{{url}}" frameborder="0"
+                allow="accelerometer; encrypted-media; 
                 gyroscope; 
                 picture-in-picture" allowfullscreen>
             </iframe>
-            <div class="col-3"></div>
-        </div>
-
-        <h4>Add tags to your video here.</h4>
-        <form id="tag-form">
-            <div class="form-group">
-                <label for="title">Tag Name</label>
-                <input placeholder="" type="text" class="form-control" id="tagname">
-                <br />
-                <label for="title">Start Time</label>
-                <input placeholder="" type="text" class="form-control" id="starttime">
-                <br />
-                <label for="title">End Time</label>
-                <input placeholder="" type="text" class="form-control" id="endtime">
-                <br />
-                <button type="ADD" class="btn btn-success submit">Submit</button>
+            <form id="tag-form">
+                <div class="form-group">
+                    <label for="title">Tag Name</label>
+                    <input placeholder="" type="text" class="form-control" id="tagname">
+                    <br />
+                    <label for="title">Start Time</label>
+                    <input placeholder="" type="text" class="form-control" id="starttime">
+                    <br />
+                    <label for="title">End Time</label>
+                    <input placeholder="" type="text" class="form-control" id="endtime">
+                    <br />
+                    <button type="ADD" class="btn btn-success submit">Submit</button>
+                </div>
+            </form>
+            <div class="col-md-3 offset-md-3">
+                {{#each tag}}
+                <button startTime="{{startTime}}" endTime="{{endTime}}" type="button" class="tagButton btn btn-primary"
+                    id={{tagName}}>{{tagName}} </button>
+                {{/each}}
             </div>
-        </form>
-        <div class="col-md-3 offset-md-3">
-            {{#each tag}}
-            <button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
-            {{/each}}
+            </form>
+            <div class="col-md-3 offset-md-3">
+                {{#each tag}}
+                <button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
+                {{/each}}
+            </div>
+            <p>{{startTime}}</p>
+            <p>{{endTime}}</p>
         </div>
-        <p>{{startTime}}</p>
-        <p>{{endTime}}</p>
     </div>
-</div>
