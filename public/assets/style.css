@@ -21,12 +21,15 @@ p {
 h6 {
     font-weight: 300;
 }
+<<<<<<< HEAD
 
 
 
 .addedVideo {
     margin: 2% 0%;
 }
+=======
+>>>>>>> master
 
 .l-content {
     margin: 0 auto;
@@ -52,6 +55,7 @@ h6 {
 
 /* header  */
 .header {
+<<<<<<< HEAD
     margin-left: 10px;
     border-bottom: 2px white solid;
    
@@ -61,12 +65,23 @@ h6 {
     margin-bottom: 3%;
     border-bottom: 2px white solid;
    
+=======
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size:  25px; 
+    padding-top: 20px;
+>>>>>>> master
  }
 
 
 .banner {
     /* background: transparent url('images/footsteps.png') 0 0 no-repeat fixed; */
+<<<<<<< HEAD
    
+=======
+    text-align: center;
+>>>>>>> master
     background-size: cover;
     height: 200px;
     width: 100%;
