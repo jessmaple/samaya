@@ -1,37 +1,34 @@
 module.exports = function (sequelize, DataTypes) {
-    const Tags = sequelize.define("Tags", {
-        tag1: {
+    const tags = sequelize.define("tags", {
+        tagName: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1]
+        },
+        tagId:{
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+
+        urlId:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'videos',
+                key: 'id'
             }
         },
-        tag2: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
+        startTime: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+
         },
-        tag3: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
-        },
-        tag4: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
-        },
-        tag5: {
-            type: DataTypes.STRING,
-            validate: {
-                len: [1]
-            }
-        },
-       
+        endTime: {
+            type: DataTypes.INTEGER,
+        }
     });
-    return Tags;
+
+    tags.associate = function(models){
+        tags.belongsTo(models.videos, {foreignKey: 'urlId'})
+    }   
+    return tags;
 };

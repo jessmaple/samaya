@@ -1,0 +1,25 @@
+
+    <div class="jumbotron jumbotron-fluid">
+        <h2 class="header">
+        Samaya
+      </h2>
+        <h4 class="resultHeader">Video Results Related to "{{tagName}}" :</h4>
+    </div>
+
+
+    <div class="container" id="results-box">
+        <div class="row">
+        </div>
+      {{#each urls}}
+        <a href={{id}}>
+            <div class="card urlLink"  id="url" style="width: 18rem;">
+                <span class="badge badge-primary"></span>
+                <img src="{{thumb}}" class="card-img-top" alt="...">
+            </div>
+        </a>
+     {{/each}} 
+    </div>
+
+
+
+

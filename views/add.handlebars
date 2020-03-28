@@ -1,0 +1,39 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h2 class="addHeader">
+            Samaya
+        </h2>
+        <div class="addedVideo row">
+            <div class="col-3"></div>
+            <iframe class="col-6" id="urlPath" urlId={{urlId}} width="560" height="315" src="{{url}}" frameborder="0"
+                allow="accelerometer; encrypted-media; 
+                gyroscope; 
+                picture-in-picture" allowfullscreen>
+            </iframe>
+            <div class="col-3"></div>
+        </div>
+        <form id="tag-form">
+            <div class="form-group">
+                <label for="title">Tag Name</label>
+                <input placeholder="Enter Tag Name" type="text" class="form-control" id="tagname">
+                <br />
+                <label for="title">Start Time</label>
+                <input placeholder="Enter Start Time (in seconds)" type="text" class="form-control" id="starttime">
+                <br />
+                <label for="title">End Time</label>
+                <input placeholder="Enter End Time (in seconds)" type="text" class="form-control" id="endtime">
+                <br />
+                <button type="ADD" class="btn btn-success submit">Submit</button>
+            </div>
+        </form>
+        
+        <div class="col-md-6 offset-md-3">
+            <h4>Tags Applied to this video:</h4>
+            {{#each tag}}
+            <button type="button" class="tagButton btn btn-primary" id={{tagName}}>{{tagName}} </button>
+            {{/each}}
+        </div>
+        <p>{{startTime}}</p>
+        <p>{{endTime}}</p>
+    </div>
+</div>
